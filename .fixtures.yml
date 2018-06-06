@@ -1,0 +1,11 @@
+---
+fixtures:
+  repositories:
+    stdlib:
+      ref: "4.18.0"
+      repo: "https://github.com/puppetlabs/puppetlabs-stdlib"
+    nginx:
+      ref: "0.12.0"
+      repo: "https://github.com/voxpupuli/puppet-nginx"
+  symlinks:
+    vision_nginx: '#{source_dir}'
