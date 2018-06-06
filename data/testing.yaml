@@ -1,1 +1,112 @@
 ---
+vision_nginx::vhost_defaults: {}
+vision_nginx::conf_dir: '/tmp/nginx'
+vision_nginx::package_name: 'nginx-light'
+vision_nginx::package_version: 'latest'
+vision_nginx::vhosts:
+  redirect:
+    listen_port: 80
+    listen_options: 'default_server'
+    ssl_redirect: true
+    access_log: 'off'
+  www:
+    listen_port: 443
+    listen_options: 'default_server'
+    ssl: true
+    ssl_cert: '/tmp/nginx/ssl/cert.pem'
+    ssl_key: '/tmp/nginx/ssl/private-key.pem'
+    ssl_dhparam: '/tmp/nginx/ssl/dhparams.pem'
+
+vision_nginx::x509_key: |-
+  -----BEGIN PRIVATE KEY-----
+  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
+  hmvFt5ngHEWpxK4yyO99AmZWL/Cgmw==
+  -----END PRIVATE KEY-----
+
+vision_nginx::x509_crt: |-
+  -----BEGIN CERTIFICATE-----
+  MIIFYDCCA0igAwIBAgIJALhv2f56XxkfMA0GCSqGSIb3DQEBCwUAMEUxCzAJBgNV
+  BAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBX
+  aWRnaXRzIFB0eSBMdGQwHhcNMTgwODIzMTAwNTI3WhcNMTkwODIzMTAwNTI3WjBF
+  MQswCQYDVQQGEwJBVTETMBEGA1UECAwKU29tZS1TdGF0ZTEhMB8GA1UECgwYSW50
+  ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIIC
+  CgKCAgEAyYZXrAaMHO1M6JFVjLIRcYJYBVdeC2rytICFq+U++cDSOjIdHgS4BWu0
+  4nNjoUX51MjtYvV28o9q2c+1nKCQ/KlQxelDSrbxBcYRQRLreF8VnxZD+0LtAq3m
+  phjot7CG4QRFScDpGc88MzyGHowS93mmXM7Uowcw2Ghk1oIeWZ+o9JxvJ/ir9b5v
+  5303WK+9U2XOD9YISJI/t57FxhBbRd/n25nB5I5gq3SC1mFZXOCzmITNmRL4SeIN
+  5sg5BIllNZRIVV7x+oqaDfzIBwU9bb1LgXfSDMF/LuDMyehff+5mR4hbhH1qI0hQ
+  jlrlAE29fm4bRVcdR3n3FVnS1D/NcwE9iDStedfodAejpPOXnb5tAmq6vzfNcAZe
+  p2K0Bt53zlJhubZJbI/1rV+hkYyflpkLOVc4nG53OaECSNq2rpUgM1Qk8Yt2fMO7
+  jk5S80cLLdr/3rBQ1trZD+Gb3ehani/9xXGMProLhfHF5o1i4mfu5ZaXeK++CK5J
+  0yWmkPxC74f+dxIIkc4f/K6kG7Q19M75p7+LYPeB7vzbOOf2buY8NutzWLeqESz9
+  0YAeN8RGFKMjWxEWebROzO/hCv65B64eMEbVmDn0VLObO+99fC29lQ9VPVzgQfdt
+  0oFPw2F2DqNQfC/EYdL4Qk54KBAtQowwS4FWXJKASoR7SehZbY8CAwEAAaNTMFEw
+  HQYDVR0OBBYEFM5+2vBKapI5rFMeXcW3vukG4WitMB8GA1UdIwQYMBaAFM5+2vBK
+  apI5rFMeXcW3vukG4WitMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQAD
+  ggIBACLv24ZN3erMf8HkoSnyyVvXyM6XIEIqKKfPugcC3o/X9XkbsxqwkT4439tR
+  O0CYUjR8Gc/JOrS2AYSJPfr3Xf9nZ9H1tB1zdfDSNibwVqzUkBI1r83YZcCoGwls
+  GqXXSIVwFL4U9mAq9Isi0gkbD+InCQQ99mmdXNXhbscDLu0Un+WqnvASOJyCBQWv
+  M03XNoYwJHQ9AZ2ZzRdkv3GG4Yc8f9nzkCI458IK8gyyW1HBs4eazVugl3PE45xt
+  fY4WJTXqaxxt+TPACFo6+AUMe0kw6FjPP6641FDc9JIy4SZsca0zVAXBw+BzYFig
+  bqDuVSy9f64NENmfdLruRAZuRDzY9Pe0CNGItdPcc5+RboAAWqsmpM+lIHS2bGtj
+  R5HzmrjA6LGAesYWER1QL6AglW+rQuiYh5khue8vFQsxpo5hVCCNikwh3qlQF9nR
+  IoZJFIiC3azTtbXpJK+REKctZFtA1NsPREGTKBGwj1DO3yuBrFetwFLu2B8UMYDc
+  ZeuWxo71LgSz+jrg8CUBQmSozirMUwGxylNXnSXomd9RpUts8HtlaLSU3/B97Ki+
+  4LEbaFcafGx3uvTZ5rObnhoii9j+oPB54b+APCsu+pTnTa45ciyGpb8bHUG5G++a
+  cZpAe6Eq5IsrIKZvxLCRkMm5+RdQKfvr/y+wyd51fsnppSTQ
+  -----END CERTIFICATE-----
+
+vision_nginx::dhparams: |-
+  -----BEGIN DH PARAMETERS-----
+  MIGHAoGBAPNpM3uy1fM1/TQWK7YL6rZ2pqZr8Dj/4Sh0wMdMgf7DGAY7r0Sp3b7B
+  fc9BrECr5/0O+nqNkqYvMwl4T41UMIbIStU1jAO425FL4IYu1MuA/2NYiKe8gOtb
+  MkDhRrzybvTRG1eO6PNlsQCVFSV28KilTQv7APUs55r9K0t1iAmbAgEC
+  -----END DH PARAMETERS-----
