@@ -28,6 +28,7 @@ class vision_nginx (
     server_tokens        => 'off',
     worker_processes     => 'auto',
     worker_rlimit_nofile => 4096,
+    client_max_body_size => '500M',
   }
 
   # use non standard configuration directory
