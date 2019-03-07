@@ -82,11 +82,6 @@ class vision_nginx (
     }
   }
 
-  file { "${conf_dir}/mime.types":
-    ensure  => 'present',
-    content => template('vision_nginx/mime.types'),
-  }
-
   create_resources('::nginx::resource::server', $vhosts, $vhost_defaults)
 
 }
